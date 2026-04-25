@@ -1,0 +1,11 @@
+rules_version = '2';
+
+// DEMO MODE: fully open rules for the 1-hour StadiumOps demo.
+// DO NOT use in production — anyone can read/write any document.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+}
